@@ -29,8 +29,6 @@ func init() {
 	cobra.OnInitialize(initConfig)
 
 	rootCmd.PersistentFlags().StringVar(&rootDir, "rootDir", "", "Root Directory for notes (default is $HOME/.config/dsnote)")
-
-	// rootCmd.Add
 }
 
 func initConfig() {
@@ -44,5 +42,4 @@ func initConfig() {
 		fmt.Println(err)
 		os.Exit(2)
 	}
-
 }
