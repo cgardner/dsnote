@@ -8,8 +8,11 @@ clean:
 run: vendor
 	go run -mod=vendor main.go
 
-test: vendor
-	go test ./...
+test:
+	go test --coverprofile=coverage.out ./...
+
+cover: test
+	go tool cover -func=coverage.out
 
 vendor:
 	go get
